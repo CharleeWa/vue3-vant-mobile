@@ -6,6 +6,7 @@ definePage({
   meta: {
     level: 2,
     title: '💿 Mock 指南',
+    i18n: 'home.mockGuide',
   },
 })
 
@@ -24,22 +25,22 @@ const reset = () => messages.value = ''
 <template>
   <div>
     <div class="data-label">
-      来自异步请求的数据
+      {{ $t('mock.fromAsyncData') }}
     </div>
 
     <div class="data-content bg-white dark:bg-[--van-background-2]">
       <div v-if="messages">
         {{ messages }}
       </div>
-      <VanEmpty v-else description="暂无数据" />
+      <VanEmpty v-else :description="$t('mock.noData')" />
     </div>
 
     <van-space class="m-10" direction="vertical" fill>
       <VanButton type="primary" round block @click="pull">
-        请求
+        {{ $t('mock.pull') }}
       </VanButton>
       <VanButton type="default" round block @click="reset">
-        清空
+        {{ $t('mock.reset') }}
       </VanButton>
     </van-space>
   </div>

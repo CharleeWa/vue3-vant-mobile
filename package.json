@@ -32,10 +32,12 @@
     "vant": "^4.8.5",
     "vconsole": "^3.15.1",
     "vue": "^3.4.21",
+    "vue-i18n": "^9.10.2",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.8.0",
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.11.25",
     "@types/nprogress": "^0.2.3",

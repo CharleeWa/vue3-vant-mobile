@@ -1,3 +1,5 @@
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { unheadVueComposablesImports } from '@unhead/vue'
 import legacy from '@vitejs/plugin-legacy'
 import vue from '@vitejs/plugin-vue'
@@ -12,6 +14,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Sitemap from 'vite-plugin-sitemap'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import { createViteVConsole } from './vconsole'
 
 export function createVitePlugins() {
@@ -56,6 +59,8 @@ export function createVitePlugins() {
         VueRouterAutoImports,
         {
           'vue-router/auto': ['useLink'],
+          '@/utils/i18n': ['i18n', 'locale'],
+          'vue-i18n': ['useI18n'],
         },
         unheadVueComposablesImports,
       ],
@@ -63,6 +68,12 @@ export function createVitePlugins() {
       dirs: [
         'src/composables',
       ],
+    }),
+
+    // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
+    VueI18nPlugin({
+      // locale messages resource pre-compile option
+      include: resolve(dirname(fileURLToPath(import.meta.url)), '../../src/locales/**'),
     }),
 
     legacy({

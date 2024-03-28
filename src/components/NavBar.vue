@@ -9,9 +9,12 @@ function onBack() {
     router.replace('/')
 }
 
+const { t } = useI18n()
+
 const title = computed(() => {
-  const { title } = (route.meta as { title?: string }) || {}
-  return title || ''
+  if (!route.meta || !route.meta.title)
+    return ''
+  return route.meta.i18n ? t(route.meta.i18n) : route.meta.title
 })
 </script>
 

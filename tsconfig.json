@@ -14,7 +14,8 @@
       "node",
       "unplugin-vue-router/client",
       "vite-plugin-vue-layouts/client",
-      "vite-plugin-pwa/client"
+      "vite-plugin-pwa/client",
+      "@intlify/unplugin-vue-i18n/messages"
     ],
     "allowJs": true,
     "strictNullChecks": false,

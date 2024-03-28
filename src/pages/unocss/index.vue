@@ -4,6 +4,7 @@ definePage({
   meta: {
     level: 2,
     title: '🎨 Unocss 示例',
+    i18n: 'home.unocssExample',
   },
 })
 </script>

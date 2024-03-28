@@ -2,6 +2,7 @@
   "recommendations": [
     "Vue.volar",
     "antfu.unocss",
-    "simonhe.common-intellisense"
+    "simonhe.common-intellisense",
+    "lokalise.i18n-ally"
   ]
 }
