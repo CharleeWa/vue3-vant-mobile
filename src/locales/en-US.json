@@ -1,0 +1,17 @@
+{
+  "home": {
+    "darkMode": "🌗 Dark Mode",
+    "mockGuide": "💿 Mock Guide",
+    "language": "📚 Language",
+    "404Demo": "🙅 Page 404 Demo",
+    "echartsDemo": "📊 Echarts Demo",
+    "persistPiniaState": "🍍 Persistent Pinia state",
+    "unocssExample": "🎨 Unocss example"
+  },
+  "mock": {
+    "fromAsyncData": "Data from asynchronous requests",
+    "noData": "No data",
+    "pull": "Pull",
+    "reset": "Reset"
+  }
+}

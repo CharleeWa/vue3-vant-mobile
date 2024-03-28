@@ -49,5 +49,13 @@
   "common-intellisense.showSlots": false,
   "common-intellisense.ui": [
     "vant4"
-  ]
+  ],
+
+  // Configuration of i18n i18n-ally
+  "i18n-ally.enabledParsers": ["json"],
+  "i18n-ally.displayLanguage": "zh-CN",
+  "i18n-ally.localesPaths": [
+    "src/locales"
+  ],
+  "i18n-ally.keystyle": "nested"
 }

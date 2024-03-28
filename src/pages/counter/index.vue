@@ -7,6 +7,7 @@ definePage({
   meta: {
     level: 2,
     title: '🍍 持久化 Pinia 状态',
+    i18n: 'home.persistPiniaState',
   },
 })
 
