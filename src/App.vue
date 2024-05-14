@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import useAppStore from '@/stores/modules/app'
-import useRouteCache from '@/stores/modules/routeCache'
 import useRouteTransitionNameStore from '@/stores/modules/routeTransitionName'
 import useAutoThemeSwitcher from '@/hooks/useAutoThemeSwitcher'
 
@@ -33,10 +32,6 @@ const routeTransitionNameStore = useRouteTransitionNameStore()
 const { routeTransitionName } = storeToRefs(routeTransitionNameStore)
 const { initializeThemeSwitcher } = useAutoThemeSwitcher(appStore)
 
-const keepAliveRouteNames = computed(() => {
-  return useRouteCache().routeCaches as string[]
-})
-
 onMounted(() => {
   initializeThemeSwitcher()
 })
@@ -45,10 +40,11 @@ onMounted(() => {
 <template>
   <VanConfigProvider :theme="mode">
     <NavBar />
-    <router-view v-slot="{ Component, route }">
+    <router-view v-slot="{ Component }">
       <transition :name="routeTransitionName">
-        <keep-alive :include="keepAliveRouteNames">
-          <component :is="Component" :key="route.name" />
+        <!-- 不同 layout 之间有缓存需求的话，需要加上 layout 组件的名称 -->
+        <keep-alive :include="['DefaultLayout', 'KeepAliveLayout']">
+          <component :is="Component" />
         </keep-alive>
       </transition>
     </router-view>

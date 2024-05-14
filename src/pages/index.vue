@@ -3,10 +3,15 @@ import type { PickerColumn } from 'vant'
 import useAppStore from '@/stores/modules/app'
 import { languageColumns, locale } from '@/utils/i18n'
 
+defineOptions({
+  name: 'Home',
+})
+
 definePage({
-  name: 'home',
+  name: 'Home',
   meta: {
     level: 1,
+    keepAlive: true,
   },
 })
 
