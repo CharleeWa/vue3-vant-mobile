@@ -14,6 +14,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import Sitemap from 'vite-plugin-sitemap'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
+import Layouts from 'vite-plugin-vue-layouts'
 import { createViteVConsole } from './vconsole'
 
 export function createVitePlugins() {
@@ -114,5 +115,7 @@ export function createVitePlugins() {
         ],
       },
     }),
+
+    Layouts(),
   ]
 }

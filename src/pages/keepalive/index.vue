@@ -1,15 +1,16 @@
 <script setup lang="ts">
 defineOptions({
-  name: 'KeepAlive',
+  name: 'KeepAliveIndex',
 })
 
 definePage({
-  name: 'KeepAlive',
+  name: 'KeepAliveIndex',
   meta: {
     level: 2,
     title: '🧡 KeepAlive',
     i18n: 'home.keepAlive',
     keepAlive: true,
+    layout: false,
   },
 })
 
